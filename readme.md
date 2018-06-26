@@ -9,14 +9,12 @@ const Game = require('vorge/core/Game');
 const Module = require('vorge/core/Module');
 
 module.exports = Documentation.for(Module, docs => {
-    docs.meta({ 
-        module: 'vorge/core/Module' 
-    });
+    docs.module('vorge/core/Module');
     
-    docs.field('kind', String);
-    docs.field('game', Game);
+    docs.field('kind', String, '// markdown here');
+    docs.field('game', Game, '// markdown here');
     
-    docs.info('Proxies', `
+    docs.section('Proxies', `
         // markdown here
     `);
 });
@@ -25,10 +23,13 @@ module.exports = Documentation.for(Module, docs => {
 #### Output
 ```markdown
 # Module
-*const Module = require('vorge/core/Module');*
+*`const Module = require('vorge/core/Module');`*
 
-### String module.kind
-### Game module.game
+#### `String module.kind`
+// markdown here
+
+#### `Game module.game`
+// markdown here
     
 ## Proxies
 // markdown here
@@ -42,10 +43,8 @@ const Module = require('vorge/core/Module');
 const Connection = require('vorge/modules/Connection');
 
 module.exports = Documentation.for(Connection, docs => {
-    docs.meta({ 
-        module: 'vorge/modules/Component', 
-        extends: Module 
-    });
+    docs.module('vorge/modules/Component');
+    docs.extends(Module);
     
     docs.method('establish', [ 'host' ], undefined, `
         // markdown here
@@ -55,11 +54,8 @@ module.exports = Documentation.for(Connection, docs => {
 
 #### Output
 ```markdown
-# Module
+# Connection : Module
 *const Connection = require('vorge/modules/Connection');*
-    
-## Meta
-Connection inherits from Module
     
 ### void module.establish(host)
 // markdown here
