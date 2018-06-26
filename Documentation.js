@@ -6,14 +6,15 @@ class Speficitaion {
         const { of, require } = documentation;
         
         this.documentation = documentation;
-        this.markdown = `# ${ of.name }
+        this.markdown = `
+            # ${ of.name }
             ${ require ? `\`const ${ of.name } = require('${ require }');\`` : '' }
         `;
     }
     
     extends (parent) {
         const { of } = this.documentation;
-        const regexp = new RegExp(`^# (${ of.name })`);
+        const regexp = new RegExp(`^\n\s+?#\s(${ of.name })`);
         
         this.markdown = this.markdown.replace(regexp, name => `${ name } : [${ parent.name }](#${ requires.get(parent) })`);
     }
