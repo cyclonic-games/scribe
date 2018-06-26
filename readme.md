@@ -25,7 +25,6 @@ module.exports = Documentation.for(Module, docs => {
 ```javascript
 const Documentation = require('scibe/core/Documentation');
 
-const Game = require('vorge/core/Game');
 const Module = require('vorge/core/Module');
 const Connection = require('vorge/modules/Connection');
 
