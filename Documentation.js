@@ -16,7 +16,7 @@ class Speficitaion {
         const { of } = this.documentation;
         const regexp = new RegExp(`# (${ of.name })`);
         
-        this.markdown.replace(regexp, name => `${ name } : [${ parent.name }](#${ requires.get(parent) })`);
+        this.markdown = this.markdown.replace(regexp, name => `${ name } : [${ parent.name }](#${ requires.get(parent) })`);
     }
     
     field (name, type, description) {
@@ -24,8 +24,8 @@ class Speficitaion {
         const self = of.name.toLowerCase();
         
         this.markdown += `
-            #### \`${ type.name } ${ self }.${ name }\`
-            ${ description }
+            - #### *\`${ self }.${ name } -> ${ type.name }\`*
+              ${ description }
         `;
     }
     
@@ -34,13 +34,14 @@ class Speficitaion {
         const self = of.name.toLowerCase();
         
         this.markdown += `
-            #### \`${ type.name } ${ self }.${ name }(${ args.join(', ') })\`
-            ${ description }
+            - #### *\`${ self }.${ name }(${ args.join(', ') }) -> ${ type.name }\`*
+              ${ description }
         `;
     }
     
     section (title, content) {
         this.markdown += `
+            ---
             ## ${ title }
             ${ content }
         `;
