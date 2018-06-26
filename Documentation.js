@@ -1,3 +1,5 @@
+const requires = new Map();
+
 class Speficitaion {
     
     constructor (documentation) {
@@ -14,7 +16,7 @@ class Speficitaion {
         const { of } = this.documentation;
         const regexp = new RegExp(`# (${ of.name })`);
         
-        this.markdown.replace(regexp, of => `${ of } : ${ parent.name }`);
+        this.markdown.replace(regexp, name => `${ name } : [${ parent.name }](#${ requires.get(parent) })`);
     }
     
     field (name, type, description) {
@@ -44,6 +46,8 @@ module.exports = class Documentation {
         this.of = of;
         this.require = require;
         this.specification = specification;
+        
+        requires.set(of, require);
     }
     
     generate () {
