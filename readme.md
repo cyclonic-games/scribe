@@ -3,7 +3,7 @@ Documentation manager for vorge &amp; vorge compatible libraries/projects
 
 ## Example 1
 ```javascript
-const scribe = require('scribe');
+const Documentation = require('scribe/Documentation');
 
 const Game = require('vorge/core/Game');
 const Module = require('vorge/core/Module');
