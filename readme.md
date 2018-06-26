@@ -1,7 +1,7 @@
 # scribe
 Documentation manager for vorge &amp; vorge compatible libraries/projects
 
-
+## Example 1
 ```javascript
 const Documentation = require('scibe/core/Documentation');
 
@@ -16,12 +16,25 @@ module.exports = Documentation.for(Module, docs => {
     docs.field('kind', String);
     docs.field('game', Game);
     
-    docs.explain('Proxies', `
+    docs.info('Proxies', `
         // markdown here
     `);
 });
 ```
 
+#### Output
+```markdown
+# Module
+*const Module = require('vorge/core/Module');*
+
+### String module.kind
+### Game module.game
+    
+## Proxies
+// markdown here
+```
+
+## Example 2
 ```javascript
 const Documentation = require('scibe/core/Documentation');
 
@@ -34,12 +47,20 @@ module.exports = Documentation.for(Connection, docs => {
         extends: Module 
     });
     
-    docs.method('establish', [ 'host' ], method => {
-        method.arguments.host = String;
-        method.returns = undefined;
-        method.explanation = `
-            // markdown here
-        `;
-    });
+    docs.method('establish', [ 'host' ], undefined, `
+        // markdown here
+    `);
 });
+```
+
+#### Output
+```markdown
+# Module
+*const Connection = require('vorge/modules/Connection');*
+    
+## Meta
+Connection inherits from Module
+    
+### void module.establish(host)
+// markdown here
 ```
