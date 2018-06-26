@@ -24,7 +24,7 @@ class Specification {
         const self = of.name.toLowerCase();
         
         this.markdown += this.documentation.outdent(`
-            - #### *\`${ self }.${ name } -> ${ type.name }\`*
+            - #### *\`${ self }.${ name } -> ${ type ? type.name || type : 'void' }\`*
               ${ this.documentation.outdent(description) }
         `);
     }
@@ -34,7 +34,7 @@ class Specification {
         const self = of.name.toLowerCase();
         
         this.markdown += this.documentation.outdent(`
-            - #### *\`${ self }.${ name }(${ args.join(', ') }) -> ${ type.name }\`*
+            - #### *\`${ self }.${ name }(${ args.join(', ') }) -> ${ type ? type.name || type : 'void' }\`*
               ${ this.documentation.outdent(description) }
         `);
     }
