@@ -8,9 +8,7 @@ const Documentation = require('scibe/core/Documentation');
 const Game = require('vorge/core/Game');
 const Module = require('vorge/core/Module');
 
-module.exports = Documentation.for(Module, docs => {
-    docs.module('vorge/core/Module');
-    
+module.exports = Documentation.for(Module, 'vorge/core/Module', docs => {
     docs.field('kind', String, '// markdown here');
     docs.field('game', Game, '// markdown here');
     
@@ -42,8 +40,7 @@ const Documentation = require('scibe/core/Documentation');
 const Module = require('vorge/core/Module');
 const Connection = require('vorge/modules/Connection');
 
-module.exports = Documentation.for(Connection, docs => {
-    docs.module('vorge/modules/Component');
+module.exports = Documentation.for(Connection, 'vorge/modules/Component', docs => {
     docs.extends(Module);
     
     docs.method('establish', [ 'host' ], undefined, `
