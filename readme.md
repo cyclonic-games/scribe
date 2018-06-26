@@ -3,12 +3,12 @@ Documentation manager for vorge &amp; vorge compatible libraries/projects
 
 ## Example 1
 ```javascript
-const Documentation = require('scribe/Documentation');
+const scribe = require('scribe');
 
 const Game = require('vorge/core/Game');
 const Module = require('vorge/core/Module');
 
-module.exports = Documentation.for(Module, 'vorge/core/Module', docs => {
+module.exports = new Documentation(Module, 'vorge/core/Module', docs => {
     docs.field('kind', String, '// markdown here');
     docs.field('game', Game, '// markdown here');
     
@@ -40,7 +40,7 @@ const Documentation = require('scribe/Documentation');
 const Module = require('vorge/core/Module');
 const Connection = require('vorge/modules/Connection');
 
-module.exports = Documentation.for(Connection, 'vorge/modules/Component', docs => {
+module.exports = new Documentation(Connection, 'vorge/modules/Component', docs => {
     docs.extends(Module);
     
     docs.method('establish', [ 'host' ], undefined, `
