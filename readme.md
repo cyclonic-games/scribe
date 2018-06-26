@@ -23,7 +23,7 @@ module.exports = Documentation.for(Module, docs => {
 #### Output
 ```markdown
 # Module
-*`const Module = require('vorge/core/Module');`*
+`const Module = require('vorge/core/Module');`
 
 #### `String module.kind`
 // markdown here
@@ -55,7 +55,7 @@ module.exports = Documentation.for(Connection, docs => {
 #### Output
 ```markdown
 # Connection : Module
-*const Connection = require('vorge/modules/Connection');*
+`const Connection = require('vorge/modules/Connection');`
     
 ### void module.establish(host)
 // markdown here
