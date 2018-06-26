@@ -57,3 +57,26 @@ module.exports = new Documentation(Connection, 'vorge/modules/Component', spec =
 #### void module.establish(host)
 // markdown here
 ```
+
+```markdown
+# Array : [Object](#undefined)
+`const Array = require('foo/Array');`
+
+### Example
+```javascript
+const array = new Array();
+```
+
+### Properties
+##### *`String array.foo`*
+returns the foo as a string
+
+##### *`Number array.bar`*
+returns the bar as a number
+
+### Methods
+Here are some methods
+
+##### *`Number array.baz(x, y)`*
+accepts X & Y, and returns their sum
+```
