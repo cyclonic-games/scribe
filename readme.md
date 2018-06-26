@@ -57,6 +57,6 @@ module.exports = Documentation.for(Connection, docs => {
 # Connection : Module
 `const Connection = require('vorge/modules/Connection');`
     
-### void module.establish(host)
+#### void module.establish(host)
 // markdown here
 ```
