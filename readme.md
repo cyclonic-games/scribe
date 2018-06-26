@@ -8,11 +8,11 @@ const Documentation = require('scribe/Documentation');
 const Game = require('vorge/core/Game');
 const Module = require('vorge/core/Module');
 
-module.exports = new Documentation(Module, 'vorge/core/Module', docs => {
-    docs.field('kind', String, '// markdown here');
-    docs.field('game', Game, '// markdown here');
+module.exports = new Documentation(Module, 'vorge/core/Module', spec => {
+    spec.field('kind', String, '// markdown here');
+    spec.field('game', Game, '// markdown here');
     
-    docs.section('Proxies', `
+    spec.section('Proxies', `
         // markdown here
     `);
 });
@@ -40,10 +40,10 @@ const Documentation = require('scribe/Documentation');
 const Module = require('vorge/core/Module');
 const Connection = require('vorge/modules/Connection');
 
-module.exports = new Documentation(Connection, 'vorge/modules/Component', docs => {
-    docs.extends(Module);
+module.exports = new Documentation(Connection, 'vorge/modules/Component', spec => {
+    spec.extends(Module);
     
-    docs.method('establish', [ 'host' ], undefined, `
+    spec.method('establish', [ 'host' ], undefined, `
         // markdown here
     `);
 });
