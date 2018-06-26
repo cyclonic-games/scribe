@@ -3,7 +3,7 @@ Documentation manager for vorge &amp; vorge compatible libraries/projects
 
 ## Example 1
 ```javascript
-const Documentation = require('scibe/core/Documentation');
+const Documentation = require('scribe/Documentation');
 
 const Game = require('vorge/core/Game');
 const Module = require('vorge/core/Module');
@@ -35,7 +35,7 @@ module.exports = Documentation.for(Module, 'vorge/core/Module', docs => {
 
 ## Example 2
 ```javascript
-const Documentation = require('scibe/core/Documentation');
+const Documentation = require('scribe/Documentation');
 
 const Module = require('vorge/core/Module');
 const Connection = require('vorge/modules/Connection');
