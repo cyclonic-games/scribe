@@ -8,7 +8,7 @@ class Specification {
         this.documentation = documentation;
         this.markdown = this.documentation.outdent(`
             # ${ of.name }
-            ${ require ? `\`const ${ of.name } = require('${ require }');\`` : '' }
+            ### ${ require ? `\`const ${ of.name } = require('${ require }');\`` : '' }
         `);
     }
     
