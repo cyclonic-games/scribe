@@ -38,6 +38,13 @@ class Speficitaion {
             ${ description }
         `;
     }
+    
+    section (title, content) {
+        this.markdown += `
+            ## ${ title }
+            ${ content }
+        `;
+    }
 }
 
 module.exports = class Documentation {
