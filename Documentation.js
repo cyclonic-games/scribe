@@ -59,7 +59,7 @@ module.exports = class Documentation {
     }
     
     outdent (markdown) {
-        const [ , indentation ] = markdown.match(/^\n(\s+?)(?=\S)/) || [ '' ];
+        const [ , indentation ] = markdown.match(/^\n(\s+?)(?=\S)/) || [ , '' ];
         const outdented = markdown.replace(new RegExp(`\n${ indentation }`, 'g'), '\n');
         
         return outdented;
