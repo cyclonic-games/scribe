@@ -50,16 +50,16 @@ class Specification {
 
 module.exports = class Documentation {
     
-    constructor (of, require, specification) {
+    constructor (of, require, definition) {
         this.of = of;
         this.require = require;
-        this.specification = specification;
+        this.definition = definition;
         
         requires.set(of, require);
     }
     
     outdent (markdown) {
-        const [ , indentation ] = markdown.match(/^\n(\s+?)(?=\S)/) || [ '' ];
+        const [ , indentation ] = markdown.match(/^\n(\s+?)(?=\S)/) || [ , '' ];
         const outdented = markdown.replace(new RegExp(`\n${ indentation }`, 'g'), '\n');
         
         return outdented;
@@ -68,7 +68,7 @@ module.exports = class Documentation {
     generate () {
         const specification = new Specification(this);
         
-        this.specification(specification);
+        this.definition(specification);
         
         return this.outdent(specification.markdown);
     }
